@@ -9,4 +9,4 @@ data:
   AWS_REGION: us-east-2
   AWS_PROFILE: default
   JWT_SECRET: hello
-  URL: http://a9abee5b1daa5483a9797a3fa695bb59-43197170.us-east-2.elb.amazonaws.com
+  URL: http://10.100.26.128
