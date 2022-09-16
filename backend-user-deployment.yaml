@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: backend-user
-        image: asanjaata96/udagram-api-user:v1
+        image: asanjaata96/udagram-api-user:v2
         ports:
         - containerPort: 8080
         envFrom:
@@ -24,5 +24,11 @@ spec:
             name: env-configmap
         - secretRef:
             name: postgres-secret
-        - secretRef:
-            name: aws-secret
+        volumeMounts:
+          - name: aws-secret
+            mountPath: "/root/.aws"
+            readOnly: true
+      volumes:
+      - name: aws-secret
+        secret:
+          secretName: aws-secret
